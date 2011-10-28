@@ -16,7 +16,7 @@ use strict qw(subs vars);
 # (and so on)
 
 BEGIN { eval q{ use vars qw($VERSION) } }
-$VERSION = sprintf '%d.%02d', q$Revision: 0.77 $ =~ m/(\d+)/xmsg;
+$VERSION = sprintf '%d.%02d', q$Revision: 0.78 $ =~ m/(\d+)/xmsg;
 
 BEGIN {
     my $PERL5LIB = __FILE__;
@@ -152,7 +152,7 @@ elsif (__PACKAGE__ =~ m/ \b Eusascii \z/oxms) {
         1 => [ [0x00..0xFF],
              ],
     );
-    $encoding_alias = qr/ \b (?: (?:US-?)?ASCII ) \b /oxmsi;
+    $encoding_alias = qr/ \b (?: (?:us-?)?ascii ) \b /oxmsi;
 }
 
 # Latin-1
@@ -161,7 +161,7 @@ elsif (__PACKAGE__ =~ m/ \b Elatin1 \z/oxms) {
         1 => [ [0x00..0xFF],
              ],
     );
-    $encoding_alias = qr/ \b (?: ISO[-_ ]?8859-1 | IEC[- ]?8859-1 | Latin-?1 ) \b /oxmsi;
+    $encoding_alias = qr/ \b (?: iso[-_ ]?8859-1 | iec[- ]?8859-1 | latin-?1 ) \b /oxmsi;
 }
 
 # Latin-2
@@ -170,7 +170,7 @@ elsif (__PACKAGE__ =~ m/ \b Elatin2 \z/oxms) {
         1 => [ [0x00..0xFF],
              ],
     );
-    $encoding_alias = qr/ \b (?: ISO[-_ ]?8859-2 | IEC[- ]?8859-2 | Latin-?2 ) \b /oxmsi;
+    $encoding_alias = qr/ \b (?: iso[-_ ]?8859-2 | iec[- ]?8859-2 | latin-?2 ) \b /oxmsi;
 }
 
 # Latin-3
@@ -179,7 +179,7 @@ elsif (__PACKAGE__ =~ m/ \b Elatin3 \z/oxms) {
         1 => [ [0x00..0xFF],
              ],
     );
-    $encoding_alias = qr/ \b (?: ISO[-_ ]?8859-3 | IEC[- ]?8859-3 | Latin-?3 ) \b /oxmsi;
+    $encoding_alias = qr/ \b (?: iso[-_ ]?8859-3 | iec[- ]?8859-3 | latin-?3 ) \b /oxmsi;
 }
 
 # Latin-4
@@ -188,7 +188,7 @@ elsif (__PACKAGE__ =~ m/ \b Elatin4 \z/oxms) {
         1 => [ [0x00..0xFF],
              ],
     );
-    $encoding_alias = qr/ \b (?: ISO[-_ ]?8859-4 | IEC[- ]?8859-4 | Latin-?4 ) \b /oxmsi;
+    $encoding_alias = qr/ \b (?: iso[-_ ]?8859-4 | iec[- ]?8859-4 | latin-?4 ) \b /oxmsi;
 }
 
 # Cyrillic
@@ -197,7 +197,7 @@ elsif (__PACKAGE__ =~ m/ \b Ecyrillic \z/oxms) {
         1 => [ [0x00..0xFF],
              ],
     );
-    $encoding_alias = qr/ \b (?: ISO[-_ ]?8859-5 | IEC[- ]?8859-5 | Cyrillic ) \b /oxmsi;
+    $encoding_alias = qr/ \b (?: iso[-_ ]?8859-5 | iec[- ]?8859-5 | cyrillic ) \b /oxmsi;
 }
 
 # KOI8-R
@@ -206,7 +206,7 @@ elsif (__PACKAGE__ =~ m/ \b Ekoi8r \z/oxms) {
         1 => [ [0x00..0xFF],
              ],
     );
-    $encoding_alias = qr/ \b (?: KOI8-?R ) \b /oxmsi;
+    $encoding_alias = qr/ \b (?: koi8-?r ) \b /oxmsi;
 }
 
 # KOI8-U
@@ -215,7 +215,7 @@ elsif (__PACKAGE__ =~ m/ \b Ekoi8u \z/oxms) {
         1 => [ [0x00..0xFF],
              ],
     );
-    $encoding_alias = qr/ \b (?: KOI8-?U ) \b /oxmsi;
+    $encoding_alias = qr/ \b (?: koi8-?u ) \b /oxmsi;
 }
 
 # Greek
@@ -224,7 +224,7 @@ elsif (__PACKAGE__ =~ m/ \b Egreek \z/oxms) {
         1 => [ [0x00..0xFF],
              ],
     );
-    $encoding_alias = qr/ \b (?: ISO[-_ ]?8859-7 | IEC[- ]?8859-7 | Greek ) \b /oxmsi;
+    $encoding_alias = qr/ \b (?: iso[-_ ]?8859-7 | iec[- ]?8859-7 | greek ) \b /oxmsi;
 }
 
 # Latin-5
@@ -233,7 +233,7 @@ elsif (__PACKAGE__ =~ m/ \b Elatin5 \z/oxms) {
         1 => [ [0x00..0xFF],
              ],
     );
-    $encoding_alias = qr/ \b (?: ISO[-_ ]?8859-9 | IEC[- ]?8859-9 | Latin-?5 ) \b /oxmsi;
+    $encoding_alias = qr/ \b (?: iso[-_ ]?8859-9 | iec[- ]?8859-9 | latin-?5 ) \b /oxmsi;
 }
 
 # Latin-6
@@ -242,7 +242,7 @@ elsif (__PACKAGE__ =~ m/ \b Elatin6 \z/oxms) {
         1 => [ [0x00..0xFF],
              ],
     );
-    $encoding_alias = qr/ \b (?: ISO[-_ ]?8859-10 | IEC[- ]?8859-10 | Latin-?6 ) \b /oxmsi;
+    $encoding_alias = qr/ \b (?: iso[-_ ]?8859-10 | iec[- ]?8859-10 | latin-?6 ) \b /oxmsi;
 }
 
 # Latin-7
@@ -251,7 +251,7 @@ elsif (__PACKAGE__ =~ m/ \b Elatin7 \z/oxms) {
         1 => [ [0x00..0xFF],
              ],
     );
-    $encoding_alias = qr/ \b (?: ISO[-_ ]?8859-13 | IEC[- ]?8859-13 | Latin-?7 ) \b /oxmsi;
+    $encoding_alias = qr/ \b (?: iso[-_ ]?8859-13 | iec[- ]?8859-13 | latin-?7 ) \b /oxmsi;
 }
 
 # Latin-8
@@ -260,7 +260,7 @@ elsif (__PACKAGE__ =~ m/ \b Elatin8 \z/oxms) {
         1 => [ [0x00..0xFF],
              ],
     );
-    $encoding_alias = qr/ \b (?: ISO[-_ ]?8859-14 | IEC[- ]?8859-14 | Latin-?8 ) \b /oxmsi;
+    $encoding_alias = qr/ \b (?: iso[-_ ]?8859-14 | iec[- ]?8859-14 | latin-?8 ) \b /oxmsi;
 }
 
 # Latin-9
@@ -269,7 +269,7 @@ elsif (__PACKAGE__ =~ m/ \b Elatin9 \z/oxms) {
         1 => [ [0x00..0xFF],
              ],
     );
-    $encoding_alias = qr/ \b (?: ISO[-_ ]?8859-15 | IEC[- ]?8859-15 | Latin-?9 ) \b /oxmsi;
+    $encoding_alias = qr/ \b (?: iso[-_ ]?8859-15 | iec[- ]?8859-15 | latin-?9 ) \b /oxmsi;
 }
 
 # Latin-10
@@ -278,7 +278,7 @@ elsif (__PACKAGE__ =~ m/ \b Elatin10 \z/oxms) {
         1 => [ [0x00..0xFF],
              ],
     );
-    $encoding_alias = qr/ \b (?: ISO[-_ ]?8859-16 | IEC[- ]?8859-16 | Latin-?10 ) \b /oxmsi;
+    $encoding_alias = qr/ \b (?: iso[-_ ]?8859-16 | iec[- ]?8859-16 | latin-?10 ) \b /oxmsi;
 }
 
 # Windows-1252
@@ -287,7 +287,16 @@ elsif (__PACKAGE__ =~ m/ \b Ewindows1252 \z/oxms) {
         1 => [ [0x00..0xFF],
              ],
     );
-    $encoding_alias = qr/ \b (?: Windows-?1252 ) \b /oxmsi;
+    $encoding_alias = qr/ \b (?: windows-?1252 ) \b /oxmsi;
+}
+
+# Windows-1258
+elsif (__PACKAGE__ =~ m/ \b Ewindows1258 \z/oxms) {
+    %range_tr = (
+        1 => [ [0x00..0xFF],
+             ],
+    );
+    $encoding_alias = qr/ \b (?: windows-?1258 ) \b /oxmsi;
 }
 
 else {
@@ -1307,6 +1316,40 @@ sub Char::Ekoi8r::rindex($$;$) {
         );
     }
 
+    elsif (__PACKAGE__ =~ m/ \b Ewindows1258 \z/oxms) {
+        %lc = (%lc,
+            "\x8C" => "\x9C", # LATIN LIGATURE OE
+            "\x9F" => "\xFF", # LATIN LETTER Y WITH DIAERESIS
+            "\xC0" => "\xE0", # LATIN LETTER A WITH GRAVE
+            "\xC1" => "\xE1", # LATIN LETTER A WITH ACUTE
+            "\xC2" => "\xE2", # LATIN LETTER A WITH CIRCUMFLEX
+            "\xC3" => "\xE3", # LATIN LETTER A WITH BREVE
+            "\xC4" => "\xE4", # LATIN LETTER A WITH DIAERESIS
+            "\xC5" => "\xE5", # LATIN LETTER A WITH RING ABOVE
+            "\xC6" => "\xE6", # LATIN LETTER AE
+            "\xC7" => "\xE7", # LATIN LETTER C WITH CEDILLA
+            "\xC8" => "\xE8", # LATIN LETTER E WITH GRAVE
+            "\xC9" => "\xE9", # LATIN LETTER E WITH ACUTE
+            "\xCA" => "\xEA", # LATIN LETTER E WITH CIRCUMFLEX
+            "\xCB" => "\xEB", # LATIN LETTER E WITH DIAERESIS
+            "\xCD" => "\xED", # LATIN LETTER I WITH ACUTE
+            "\xCE" => "\xEE", # LATIN LETTER I WITH CIRCUMFLEX
+            "\xCF" => "\xEF", # LATIN LETTER I WITH DIAERESIS
+            "\xD0" => "\xF0", # LATIN LETTER D WITH STROKE
+            "\xD1" => "\xF1", # LATIN LETTER N WITH TILDE
+            "\xD3" => "\xF3", # LATIN LETTER O WITH ACUTE
+            "\xD4" => "\xF4", # LATIN LETTER O WITH CIRCUMFLEX
+            "\xD5" => "\xF5", # LATIN LETTER O WITH HORN
+            "\xD6" => "\xF6", # LATIN LETTER O WITH DIAERESIS
+            "\xD8" => "\xF8", # LATIN LETTER O WITH STROKE
+            "\xD9" => "\xF9", # LATIN LETTER U WITH GRAVE
+            "\xDA" => "\xFA", # LATIN LETTER U WITH ACUTE
+            "\xDB" => "\xFB", # LATIN LETTER U WITH CIRCUMFLEX
+            "\xDC" => "\xFC", # LATIN LETTER U WITH DIAERESIS
+            "\xDD" => "\xFD", # LATIN LETTER U WITH HORN
+        );
+    }
+
     # lower case first with parameter
     sub Char::Ekoi8r::lcfirst(@) {
         if (@_) {
@@ -1989,6 +2032,40 @@ sub Char::Ekoi8r::rindex($$;$) {
             "\xFD" => "\xDD", # LATIN LETTER Y WITH ACUTE
             "\xFE" => "\xDE", # LATIN LETTER THORN
             "\xFF" => "\x9F", # LATIN LETTER Y WITH DIAERESIS
+        );
+    }
+
+    elsif (__PACKAGE__ =~ m/ \b Ewindows1258 \z/oxms) {
+        %uc = (%uc,
+            "\x9C" => "\x8C", # LATIN LIGATURE OE
+            "\xFF" => "\x9F", # LATIN LETTER Y WITH DIAERESIS
+            "\xE0" => "\xC0", # LATIN LETTER A WITH GRAVE
+            "\xE1" => "\xC1", # LATIN LETTER A WITH ACUTE
+            "\xE2" => "\xC2", # LATIN LETTER A WITH CIRCUMFLEX
+            "\xE3" => "\xC3", # LATIN LETTER A WITH BREVE
+            "\xE4" => "\xC4", # LATIN LETTER A WITH DIAERESIS
+            "\xE5" => "\xC5", # LATIN LETTER A WITH RING ABOVE
+            "\xE6" => "\xC6", # LATIN LETTER AE
+            "\xE7" => "\xC7", # LATIN LETTER C WITH CEDILLA
+            "\xE8" => "\xC8", # LATIN LETTER E WITH GRAVE
+            "\xE9" => "\xC9", # LATIN LETTER E WITH ACUTE
+            "\xEA" => "\xCA", # LATIN LETTER E WITH CIRCUMFLEX
+            "\xEB" => "\xCB", # LATIN LETTER E WITH DIAERESIS
+            "\xED" => "\xCD", # LATIN LETTER I WITH ACUTE
+            "\xEE" => "\xCE", # LATIN LETTER I WITH CIRCUMFLEX
+            "\xEF" => "\xCF", # LATIN LETTER I WITH DIAERESIS
+            "\xF0" => "\xD0", # LATIN LETTER D WITH STROKE
+            "\xF1" => "\xD1", # LATIN LETTER N WITH TILDE
+            "\xF3" => "\xD3", # LATIN LETTER O WITH ACUTE
+            "\xF4" => "\xD4", # LATIN LETTER O WITH CIRCUMFLEX
+            "\xF5" => "\xD5", # LATIN LETTER O WITH HORN
+            "\xF6" => "\xD6", # LATIN LETTER O WITH DIAERESIS
+            "\xF8" => "\xD8", # LATIN LETTER O WITH STROKE
+            "\xF9" => "\xD9", # LATIN LETTER U WITH GRAVE
+            "\xFA" => "\xDA", # LATIN LETTER U WITH ACUTE
+            "\xFB" => "\xDB", # LATIN LETTER U WITH CIRCUMFLEX
+            "\xFC" => "\xDC", # LATIN LETTER U WITH DIAERESIS
+            "\xFD" => "\xDD", # LATIN LETTER U WITH HORN
         );
     }
 
