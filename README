@@ -221,5 +221,5 @@ See also code table:
 
 SEE ALSO
 
-perl, Sjis.pm
+perl, KOI8R.pm, Ekoi8r.pm, jacode.pl
 
