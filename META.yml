@@ -1,7 +1,7 @@
 --- #YAML:1.0
 name: KOI8R
 abstract: Source code filter for KOI8-R script
-version: 0.80
+version: 0.81
 author:
   - INABA Hitoshi <ina@cpan.org>
 license: perl
