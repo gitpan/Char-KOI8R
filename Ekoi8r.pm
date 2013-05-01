@@ -28,7 +28,7 @@ BEGIN {
 # (and so on)
 
 BEGIN { eval q{ use vars qw($VERSION) } }
-$VERSION = sprintf '%d.%02d', q$Revision: 0.87 $ =~ /(\d+)/xmsg;
+$VERSION = sprintf '%d.%02d', q$Revision: 0.88 $ =~ /(\d+)/xmsg;
 
 BEGIN {
     my $PERL5LIB = __FILE__;
@@ -397,7 +397,6 @@ sub KOI8R::rindex($$;$);
 # Character class
 #
 BEGIN { eval q{ use vars qw(
-    $anchor
     $dot
     $dot_s
     $eD
@@ -426,7 +425,7 @@ BEGIN { eval q{ use vars qw(
     $eb
     $eB
 ) } }
-${Ekoi8r::anchor}      = qr{\G(?:[\x00-\xFF])*?};
+
 ${Ekoi8r::dot}         = qr{(?:[^\x0A])};
 ${Ekoi8r::dot_s}       = qr{(?:[\x00-\xFF])};
 ${Ekoi8r::eD}          = qr{(?:[^0-9])};
@@ -462,6 +461,35 @@ ${Ekoi8r::not_word}    = qr{(?:[^\x30-\x39\x41-\x5A\x5F\x61-\x7A])};
 ${Ekoi8r::not_xdigit}  = qr{(?:[^\x30-\x39\x41-\x46\x61-\x66])};
 ${Ekoi8r::eb}          = qr{(?:\A(?=[0-9A-Z_a-z])|(?<=[\x00-\x2F\x40\x5B-\x5E\x60\x7B-\xFF])(?=[0-9A-Z_a-z])|(?<=[0-9A-Z_a-z])(?=[\x00-\x2F\x40\x5B-\x5E\x60\x7B-\xFF]|\z))};
 ${Ekoi8r::eB}          = qr{(?:(?<=[0-9A-Z_a-z])(?=[0-9A-Z_a-z])|(?<=[\x00-\x2F\x40\x5B-\x5E\x60\x7B-\xFF])(?=[\x00-\x2F\x40\x5B-\x5E\x60\x7B-\xFF]))};
+
+# avoid: Name "Ekoi8r::foo" used only once: possible typo at here.
+${Ekoi8r::dot}         = ${Ekoi8r::dot};
+${Ekoi8r::dot_s}       = ${Ekoi8r::dot_s};
+${Ekoi8r::eD}          = ${Ekoi8r::eD};
+${Ekoi8r::eS}          = ${Ekoi8r::eS};
+${Ekoi8r::eW}          = ${Ekoi8r::eW};
+${Ekoi8r::eH}          = ${Ekoi8r::eH};
+${Ekoi8r::eV}          = ${Ekoi8r::eV};
+${Ekoi8r::eR}          = ${Ekoi8r::eR};
+${Ekoi8r::eN}          = ${Ekoi8r::eN};
+${Ekoi8r::not_alnum}   = ${Ekoi8r::not_alnum};
+${Ekoi8r::not_alpha}   = ${Ekoi8r::not_alpha};
+${Ekoi8r::not_ascii}   = ${Ekoi8r::not_ascii};
+${Ekoi8r::not_blank}   = ${Ekoi8r::not_blank};
+${Ekoi8r::not_cntrl}   = ${Ekoi8r::not_cntrl};
+${Ekoi8r::not_digit}   = ${Ekoi8r::not_digit};
+${Ekoi8r::not_graph}   = ${Ekoi8r::not_graph};
+${Ekoi8r::not_lower}   = ${Ekoi8r::not_lower};
+${Ekoi8r::not_lower_i} = ${Ekoi8r::not_lower_i};
+${Ekoi8r::not_print}   = ${Ekoi8r::not_print};
+${Ekoi8r::not_punct}   = ${Ekoi8r::not_punct};
+${Ekoi8r::not_space}   = ${Ekoi8r::not_space};
+${Ekoi8r::not_upper}   = ${Ekoi8r::not_upper};
+${Ekoi8r::not_upper_i} = ${Ekoi8r::not_upper_i};
+${Ekoi8r::not_word}    = ${Ekoi8r::not_word};
+${Ekoi8r::not_xdigit}  = ${Ekoi8r::not_xdigit};
+${Ekoi8r::eb}          = ${Ekoi8r::eb};
+${Ekoi8r::eB}          = ${Ekoi8r::eB};
 
 #
 # KOI8-R split

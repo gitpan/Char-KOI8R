@@ -28,7 +28,7 @@ BEGIN {
 # (and so on)
 
 BEGIN { eval q{ use vars qw($VERSION) } }
-$VERSION = sprintf '%d.%02d', q$Revision: 0.87 $ =~ /(\d+)/xmsg;
+$VERSION = sprintf '%d.%02d', q$Revision: 0.88 $ =~ /(\d+)/xmsg;
 
 BEGIN {
     my $PERL5LIB = __FILE__;
@@ -397,7 +397,6 @@ sub Char::KOI8R::rindex($$;$);
 # Character class
 #
 BEGIN { eval q{ use vars qw(
-    $anchor
     $dot
     $dot_s
     $eD
@@ -426,7 +425,7 @@ BEGIN { eval q{ use vars qw(
     $eb
     $eB
 ) } }
-${Char::Ekoi8r::anchor}      = qr{\G(?:[\x00-\xFF])*?};
+
 ${Char::Ekoi8r::dot}         = qr{(?:[^\x0A])};
 ${Char::Ekoi8r::dot_s}       = qr{(?:[\x00-\xFF])};
 ${Char::Ekoi8r::eD}          = qr{(?:[^0-9])};
@@ -462,6 +461,35 @@ ${Char::Ekoi8r::not_word}    = qr{(?:[^\x30-\x39\x41-\x5A\x5F\x61-\x7A])};
 ${Char::Ekoi8r::not_xdigit}  = qr{(?:[^\x30-\x39\x41-\x46\x61-\x66])};
 ${Char::Ekoi8r::eb}          = qr{(?:\A(?=[0-9A-Z_a-z])|(?<=[\x00-\x2F\x40\x5B-\x5E\x60\x7B-\xFF])(?=[0-9A-Z_a-z])|(?<=[0-9A-Z_a-z])(?=[\x00-\x2F\x40\x5B-\x5E\x60\x7B-\xFF]|\z))};
 ${Char::Ekoi8r::eB}          = qr{(?:(?<=[0-9A-Z_a-z])(?=[0-9A-Z_a-z])|(?<=[\x00-\x2F\x40\x5B-\x5E\x60\x7B-\xFF])(?=[\x00-\x2F\x40\x5B-\x5E\x60\x7B-\xFF]))};
+
+# avoid: Name "Char::Ekoi8r::foo" used only once: possible typo at here.
+${Char::Ekoi8r::dot}         = ${Char::Ekoi8r::dot};
+${Char::Ekoi8r::dot_s}       = ${Char::Ekoi8r::dot_s};
+${Char::Ekoi8r::eD}          = ${Char::Ekoi8r::eD};
+${Char::Ekoi8r::eS}          = ${Char::Ekoi8r::eS};
+${Char::Ekoi8r::eW}          = ${Char::Ekoi8r::eW};
+${Char::Ekoi8r::eH}          = ${Char::Ekoi8r::eH};
+${Char::Ekoi8r::eV}          = ${Char::Ekoi8r::eV};
+${Char::Ekoi8r::eR}          = ${Char::Ekoi8r::eR};
+${Char::Ekoi8r::eN}          = ${Char::Ekoi8r::eN};
+${Char::Ekoi8r::not_alnum}   = ${Char::Ekoi8r::not_alnum};
+${Char::Ekoi8r::not_alpha}   = ${Char::Ekoi8r::not_alpha};
+${Char::Ekoi8r::not_ascii}   = ${Char::Ekoi8r::not_ascii};
+${Char::Ekoi8r::not_blank}   = ${Char::Ekoi8r::not_blank};
+${Char::Ekoi8r::not_cntrl}   = ${Char::Ekoi8r::not_cntrl};
+${Char::Ekoi8r::not_digit}   = ${Char::Ekoi8r::not_digit};
+${Char::Ekoi8r::not_graph}   = ${Char::Ekoi8r::not_graph};
+${Char::Ekoi8r::not_lower}   = ${Char::Ekoi8r::not_lower};
+${Char::Ekoi8r::not_lower_i} = ${Char::Ekoi8r::not_lower_i};
+${Char::Ekoi8r::not_print}   = ${Char::Ekoi8r::not_print};
+${Char::Ekoi8r::not_punct}   = ${Char::Ekoi8r::not_punct};
+${Char::Ekoi8r::not_space}   = ${Char::Ekoi8r::not_space};
+${Char::Ekoi8r::not_upper}   = ${Char::Ekoi8r::not_upper};
+${Char::Ekoi8r::not_upper_i} = ${Char::Ekoi8r::not_upper_i};
+${Char::Ekoi8r::not_word}    = ${Char::Ekoi8r::not_word};
+${Char::Ekoi8r::not_xdigit}  = ${Char::Ekoi8r::not_xdigit};
+${Char::Ekoi8r::eb}          = ${Char::Ekoi8r::eb};
+${Char::Ekoi8r::eB}          = ${Char::Ekoi8r::eB};
 
 #
 # KOI8-R split
