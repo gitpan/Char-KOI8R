@@ -12,7 +12,7 @@ DESCRIPTION
   environment in KOI8-R by easy installation and easy usage.
 
   - Character oriented regular expression
-  - Character oriented run-time routines
+  - Character oriented runtime routines
   - Character oriented subroutines
       and
   - Byte oriented CORE::* functions
@@ -45,6 +45,7 @@ INSTALLATION
 
 SUBROUTINES
 
+  KOI8R::eval(charstring)
   KOI8R::length(charstring)
   KOI8R::substr(charstring, charpos, charlen)
   and more...
